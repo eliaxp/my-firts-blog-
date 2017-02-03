@@ -4,16 +4,16 @@
 	<title>HOLA BEBE</title>
 </head>
 <body>
-	<div>
-		<h1><a href="">elias perez </a></h1>
-	</div>
+	 <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
 
-	<div>
-		<p> published: 2.02.2017, 12:45</p>
-		<h2><a href="">my first blog perras </a></h2>
-		<p>me lo tienen que mamar exactamente todos </p>
-	</div>
-
-
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
